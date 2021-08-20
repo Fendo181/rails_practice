@@ -60,3 +60,38 @@ irb(main):008:0> 1.object_id
 ```
 
 インスタンスオブジェクトは単に「インスタンス」、「オブジェクト」と呼んだりする。
+
+### オブジェクトの機能はクラスで決める
+
+Stringオブジェクトだと、`length`メソッドが使えるので文字数をカウントができる。
+
+```rb
+irb(main):008:0> 'endu'.length
+=> 4
+```
+
+一方でIntagerオブジェクトでは`length`メソッドは提供していない。
+使うと以下のように怒られる。
+
+```rb
+irb(main):009:0> 1.length
+Traceback (most recent call last):
+        4: from /Users/futoshi.endo/.rbenv/versions/2.6.6/bin/irb:23:in `<main>'
+        3: from /Users/futoshi.endo/.rbenv/versions/2.6.6/bin/irb:23:in `load'
+        2: from /Users/futoshi.endo/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+        1: from (irb):9
+NoMethodError (undefined method `length' for 1:Integer)
+```
+
+このようにオブジェクトによって提供されるメソッドが異なってくる為、Rubyでプログラムを作る場合はどんなクラスのオブジェクトにどんな機能があるかを知り、目的にあったクラスのオブジェクトを使う事が大切になってきます。
+これらを調べたかったら「組み込みライブラリ」を元に確認すると良い。
+
+[Ruby 組み込みライブラリ](https://docs.ruby-lang.org/ja/latest/library/_builtin.html)
+
+>組み込みライブラリは Ruby 本体に組み込まれているライブラリです。このライブラリに含まれるクラスやモジュールは、 require を書かなくても使うことができます。
+
+### 参考文献
+
+- [オブジェクト指向スクリプト言語 Ruby リファレンスマニュアル (Ruby 3.0.0 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/doc/index.html)
+
+
