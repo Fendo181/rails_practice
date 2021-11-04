@@ -160,6 +160,9 @@ Traceback (most recent call last):
 NoMethodError (undefined method `length' for 1:Integer)
 irb(main):008:0> 
 ```
+#### クラス
+
+- Rubyでは`return`を使って明示的に指定された値やメソッド内で最後に評価された値がメソッドの返り値となります。どちらを使っても問題ないが、メソッドの途中で抜けたい場合は`return`を使い、メソッドの最後で帰り値を指定する場合は`return`を使わないことが多いでしょう
 
 ### 参考文献
 
